@@ -232,13 +232,12 @@ img
   margin-top: 10px;
 }
 #p1{
-padding-top:140px;
-padding-left: 500px;
-padding-right: 400px;
-align-items: center;
-font-size: 70px;
-font-family: serif;
-color: black;
+  color : white;
+  text-align: center;
+  padding-top : 20px;
+  margin-top: 0px;
+ font-family: 'Faster One', cursive;
+ text-shadow: 6px 6px 6px #000000;
 }
 .done
 {
