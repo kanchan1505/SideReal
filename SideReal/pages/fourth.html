@@ -1,0 +1,41 @@
+<div class="Fourth" ng-controller="Fourthcontroller">
+  <nav class="navbar navbar-default navbar-fixed">
+      <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">SideReal</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#!/home"><span class="glyphicon glyphicon-home" aria-hidden="true" style="padding-right:5px;"></span>Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Login/Register</a></li>
+              <li><a href="#!/">Logout</a></li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
+<div>
+  <div id="text1">Select Your Event</div>
+  <div class="restaurant" ng-repeat=" x in places">
+  <div class="rest-wrapper">
+      <div  class="image">
+        <p id="f1">
+           <a ng-href="#!/main/{{x.id}}"><strong>{{x.name}}</strong></a>
+        </p>
+           <a ng-href="#!/main/{{x.id}}"><img  height="300" width="500" ng-src="{{x.image}}"/></a>
+          <!-- above code line will show the image for each events -->
+
+      </div>
+</div></div>
+</div>
+</div>

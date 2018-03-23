@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="foodieApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foodie</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        input.ng-invalid.ng-dirty {
+            border: 1px solid red;
+        }
+
+    </style>
+
+
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+
+</head>
+<body id="app">
+    <div ng-view=""></div>
+      <!-- <img src="/imgs/imgname.jpg"> -->
+      <!-- Everything of the specific page which is technically known as route will be shown inside ng-view -->
+      <script>
+      $(document).ready(function(){
+        $('#div1').animate({left:'380px',height:'150px',width:'250px'});
+       $('#div1').animate({fontSize:'4em',color:'green'},"slow");
+
+      })
+      </script>
+
+
+</body>
+
+</html>

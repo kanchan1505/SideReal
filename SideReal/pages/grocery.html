@@ -1,0 +1,12 @@
+<div ngController="groceryController">
+  <!--ng-repeat will loop through the taskList -->
+ <div ng-repeat='grocery in groceryList'>
+   <!-- A checkbox displaying the progress -->
+   <input type='checkbox' ng-model='grocery.done' />
+   <!-- An information of a task -->
+   <span ng-class='{done: grocery.done}'>{{grocery.grocery}}</span>
+ </div>
+<div class='input-form'>
+ <input type='text' ng-model='newTask' />
+ <button ng-click='addTask(newTask)'>Add</button>
+</div>

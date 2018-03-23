@@ -1,0 +1,45 @@
+<div class="login" ng-controller="loginController">
+    <div class="login-form">
+      <!-- Below is the logo-->
+      <img src="imgs/logo.png" height="150px" width="300px">
+        <h3> Login </h3>
+        <!-- Below is the login form -->
+        <form action="#" method="POST" name="loginForm" >
+        <!-- Below are different elements of form as form-group -->
+            <div class="form-group">
+                <label for="user-name">Your Name</label>
+                <input type="text" ng-minlength="3" class="form-control" id="user-name" placeholder="enter your name " name="name" required ng-model="name">
+                  <div ng-show="loginForm.name.$error.required">Required!</div>
+            </div>
+            <div class="form-group">
+                <label for="user-email">Email address</label>
+                <input type="email" class="form-control" id="user-email" placeholder="Email" name="email" required ng-model="email">
+                <div ng-show="loginForm.email.$error.required">Required!</div>
+                <div ng-show="loginForm.email.$error.email">This doesn't look like a valid email</div>
+            </div>
+            <div class="form-group">
+                <label for="user-password">Password</label>
+                <input type="password" ng-minlength="8" class="form-control" id="user-password" placeholder="Password" name="password" required ng-model="password">
+                <div ng-show="loginForm.password.$error.required">Please enter your top secret password</div>
+                <!-- When required fields are not filled it will give error and
+                  $error is angular variable not jquery -->
+            </div>
+            <div class="form-group">
+                <label for="location" >Enter your location</label>
+                    <input type="text" list="location" class="form-control" required="" ng-model="location">
+                      <!-- datalist can be replaced with select but in datalist we can write text or edit text  -->
+                    <datalist  id="location">
+                        <option value="New Delhi">New Delhi</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dehradun">Dehradun</option>
+                        <option value="other"></option>
+
+                    </datalist>
+            </div>
+            <div class="welcome-message">Welcome {{name}}</div>
+            <!-- above live {{}} are used toh show input written in ng-model variable -->
+            <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-default" ng-click="goToSecond()">Login</button>
+        </form>
+    </div>
+</div>

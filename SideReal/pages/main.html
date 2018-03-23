@@ -1,0 +1,93 @@
+<div class="main" ng-controller="mainController">
+  <nav class="navbar navbar-default navbar-fixed">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">SideReal</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/home">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Order Online</a></li>
+                <li><a href="#!/">Logout</a></li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="ui container">
+      <div class="hero">
+            <p>Find the best Place in town</p>
+        </div>
+        <div class="search-bar">
+            <form>
+            <div class="input-wrapper">
+              <input type="text" class="form-control" placeholder="Search..." ng-model="query">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+        </div>
+
+      <div ng-repeat="place in places |filter:query" class="restaurant">
+
+              <div  ng-if="place.name">
+                <!-- ng-repeat is like a loop in javascript -->
+
+                  <div ng-repeat="x in place.parentArray |filter:query" class="restaurant" >
+                <div class="rest-wrapper">
+                    <div class="image">
+                        <img ng-src="{{x.image}}" height="100" width="100">
+                        <!-- above code line will show the image for each restaurant -->
+                    </div>
+                    <div class="rest-info">
+                      <div class="rest-category">
+                         <strong>{{x.name}} </strong>
+                         <!-- above code line will show the category for each restaurant food like chinese , indian-->
+                      </div>
+                  <div class="rest-category">
+                     <small>{{x.category}} </small>
+                     <!-- above code line will show the category for each restaurant food like chinese , indian-->
+                  </div>
+
+                  <div>
+                     <strong> {{x.location}}</strong>
+                     <!-- above code line will show the location for each restaurant -->
+                  </div>
+                  <div class="rest-address">
+                      {{x.address}}
+                      <!-- above code line will show the proper address for each restaurant -->
+                  </div>
+              </div>
+                  </div>
+                  <div class="rest-extra">
+              <div class="type">
+
+                  <div><small>Cost for Two: </small></div>
+                  <div><small>Hours:</small></div>
+
+              </div>
+              <div class="value">
+                  <div>{{x.cuisines}}</div>
+                  <div>₹{{x.cost | number}}</div>
+                  <div>{{x.hours}}</div>
+              </div>
+          </div>
+          <div class="rating">
+              <strong>{{x.vote}}</strong>
+          </div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
